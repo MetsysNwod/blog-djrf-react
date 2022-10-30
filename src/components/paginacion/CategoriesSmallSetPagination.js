@@ -1,7 +1,7 @@
 import { ArrowNarrowLeftIcon, ArrowNarrowRightIcon } from '@heroicons/react/solid'
 import { useState } from 'react';
 
-function SmallSetPagination({ get_blog_list_page, blog_list, count }) {
+function CategoriesSmallSetPagination({ get_blog_list_page, blog_list, count, category_id }) {
 
   const [active, setActive] = useState(1);
   const [listingsPerPage] = useState(6);
@@ -11,7 +11,7 @@ function SmallSetPagination({ get_blog_list_page, blog_list, count }) {
     // window.scrollTo(0, 0);
     setCurrentPage(page);
     setActive(page);
-    get_blog_list_page(page)
+    get_blog_list_page(category_id, page)
   }
 
   const previous_number = () => {
@@ -19,7 +19,7 @@ function SmallSetPagination({ get_blog_list_page, blog_list, count }) {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
       setActive(currentPage - 1);
-      get_blog_list_page(currentPage - 1)
+      get_blog_list_page(category_id, currentPage - 1)
     }
   };
 
@@ -28,7 +28,7 @@ function SmallSetPagination({ get_blog_list_page, blog_list, count }) {
     if (currentPage !== Math.ceil(blog_list.length / 3)) {
       setCurrentPage(currentPage + 1);
       setActive(currentPage + 1);
-      get_blog_list_page(currentPage + 1)
+      get_blog_list_page(category_id, currentPage + 1)
     }
   };
 
@@ -102,4 +102,4 @@ function SmallSetPagination({ get_blog_list_page, blog_list, count }) {
   )
 }
 
-export default SmallSetPagination
+export default CategoriesSmallSetPagination

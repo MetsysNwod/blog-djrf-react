@@ -6,34 +6,34 @@ import { NavLink } from 'react-router-dom'
 
 
 const navigation = [
-    { name: 'Blog', href: '/blog', current: true },
-    { name: 'About', href: '/about', current: false },
-    { name: 'Contact', href: '/contact', current: false },
+  { name: 'Blog', href: '/blog', current: true },
+  { name: 'About', href: '/about', current: false },
+  { name: 'Contact', href: '/contact', current: false },
 ]
 
 function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ')
 }
 
-function Navbar(){
+function Navbar() {
 
-    // SEARCH
-    const [effectSearch, setEffectSearch] = useState(false);
-    const [term,setTerm]=useState('')
+  // SEARCH
+  const [effectSearch, setEffectSearch] = useState(false);
+  const [term, setTerm] = useState('')
 
-    const handleChange=e=>{
-      setTerm(e.target.value)
-    }
+  const handleChange = e => {
+    setTerm(e.target.value)
+  }
 
-    const onSubmit= e =>{
-      e.preventDefault()
-      setTimeout(() => window.location.href=('/search/'+term), 0.2);
-      setTerm('')
-    }
+  const onSubmit = e => {
+    e.preventDefault()
+    setTimeout(() => window.location.href = ('/search/' + term), 0.2);
+    setTerm('')
+  }
 
 
-    return(
-        <>
+  return (
+    <>
       {/* When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars */}
       <Popover
         as="header"
@@ -62,21 +62,21 @@ function Navbar(){
 
                 <div className="min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-6">
                   <div className="flex items-center px-6 py-4 md:max-w-3xl md:mx-auto lg:max-w-none lg:mx-0 xl:px-0">
-                    <form onSubmit={e=>onSubmit(e)} className="w-full">
+                    <form onSubmit={e => onSubmit(e)} className="w-full">
                       <label htmlFor="search" className="sr-only">
                         Search
                       </label>
                       <div className="relative">
                         <button
-                        type="submit"
-                        className="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                          type="submit"
+                          className="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
                           <SearchIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
                         </button>
                         <input
                           id="search"
                           name="search"
                           required
-                          onChange={(e)=>{handleChange(e)}}
+                          onChange={(e) => { handleChange(e) }}
                           className="block w-full bg-white border border-gray-300 rounded-md py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:outline-none focus:text-gray-900 focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                           placeholder="Search"
                           type="search"
@@ -99,15 +99,15 @@ function Navbar(){
                 </div>
 
                 <div className="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
-                    <NavLink to="/blog" className="text-lg dark:hover:text-white hover:text-gray-900 text-gray-600 dark:text-dark-txt text-md font-semibold">
-                        Blog
-                    </NavLink>
-                    <NavLink to="/about" className="mx-4 text-lg dark:hover:text-white hover:text-gray-900 text-gray-600 dark:text-dark-txt text-md font-semibold">
-                        About
-                    </NavLink>
-                    <NavLink to="/contact" className="text-lg dark:hover:text-white hover:text-gray-900 text-gray-600 dark:text-dark-txt text-md font-semibold">
-                        Contact
-                    </NavLink>
+                  <NavLink to="/blog" className="text-lg dark:hover:text-white hover:text-gray-900 text-gray-600 dark:text-dark-txt text-md font-semibold">
+                    Blog
+                  </NavLink>
+                  <NavLink to="/about" className="mx-4 text-lg dark:hover:text-white hover:text-gray-900 text-gray-600 dark:text-dark-txt text-md font-semibold">
+                    About
+                  </NavLink>
+                  <NavLink to="/contact" className="text-lg dark:hover:text-white hover:text-gray-900 text-gray-600 dark:text-dark-txt text-md font-semibold">
+                    Contact
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ function Navbar(){
         )}
       </Popover>
     </>
-    )
+  )
 }
 
 export default Navbar

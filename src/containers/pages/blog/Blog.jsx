@@ -1,18 +1,35 @@
+import BlogCategories from "components/blog/BlogCategories";
 import BlogList from "components/blog/BlogList";
 import Header from "components/blog/Header";
 import FullWidthLayout from "hocs/layouts/FullWidthLayout";
+import { useEffect } from "react";
 import { connect } from "react-redux";
+import { get_blog_list, get_blog_list_page } from "redux/actions/blog";
 
-function Blog({}){
+function Blog({
+    get_blog_list,
+    get_blog_list_page,
+    blog_list
+}) {
 
-    return(
+    useEffect(() => {
+        get_blog_list()
+    }, [get_blog_list])
+
+    return (
         <FullWidthLayout>
-            <Header/>
-            <BlogList/>
+            <Header />
+            <BlogCategories />
+            <BlogList get_blog_list_page={get_blog_list_page} blog_list={blog_list} />
         </FullWidthLayout>
     )
 }
 
-const mapStateToProps = state =>({})
+const mapStateToProps = state => ({
+    blog_list: state.blog.blog_list,
+})
 
-export default connect(mapStateToProps,{})(Blog)
+export default connect(mapStateToProps, {
+    get_blog_list,
+    get_blog_list_page
+})(Blog)
