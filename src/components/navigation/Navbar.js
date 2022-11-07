@@ -102,7 +102,7 @@ function Navbar() {
                   <NavLink to="/blog" className="text-lg dark:hover:text-white hover:text-gray-900 text-gray-600 dark:text-dark-txt text-md font-semibold">
                     Blog
                   </NavLink>
-                  <NavLink to="/about" className="mx-4 text-lg dark:hover:text-white hover:text-gray-900 text-gray-600 dark:text-dark-txt text-md font-semibold">
+                  <NavLink to="/nosotros" className="mx-4 text-lg dark:hover:text-white hover:text-gray-900 text-gray-600 dark:text-dark-txt text-md font-semibold">
                     About
                   </NavLink>
                   <NavLink to="/contacto" className="text-lg dark:hover:text-white hover:text-gray-900 text-gray-600 dark:text-dark-txt text-md font-semibold">

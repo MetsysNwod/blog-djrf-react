@@ -69,7 +69,7 @@ function Contacto(){
           .catch(err => {
             
             setLoading(false);
-            toast.error("Erroal enviar mensaje")
+            toast.error("Error al enviar mensaje")
           }) 
         }
 

@@ -33,13 +33,15 @@ function Header(){
       const fetchData = async () => {
         axios.post(`${process.env.REACT_APP_API_URL}/api/contacts/demo`, formData, config)
         .then(res => {
-          
-          setTimeout(navigate('/demo'),1000)
+
+
+          toast.success('Gracias por suscribirte')
+          setTimeout(navigate('/demo'),1000)/* Redirigir a una pagina especifica */
         })
         .catch(err => {
           
           setLoading(false);
-          toast.error("Erroal enviar mensaje")
+          toast.error("Error al enviar mensaje")
         }) 
       }
 

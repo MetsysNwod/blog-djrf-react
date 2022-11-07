@@ -50,7 +50,8 @@ DJANGO_APPS = [
 PROJECT_APPS = [
     'apps.blog',
     'apps.category',
-    'apps.contacts'
+    'apps.contacts',
+    'apps.about'
 ]
 
 THIRD_PARTY_APPS = [
@@ -217,7 +218,7 @@ ACTIVE_CAMPAIGN_URL=os.environ.get('ACTIVE_CAMPAIGN_URL')
 ACTIVE_CAMPAIGN_KEY=os.environ.get('ACTIVE_CAMPAIGN_KEY')
 
 if not DEBUG:
-    DEFAULT_FROM_EMAIL="Uridium <mail@holdhodl.network>"
+    DEFAULT_FROM_EMAIL="HoldHodl <mail@holdhodl.network>"
     EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST = env('EMAIL_HOST')
     EMAIL_HOST_USER = env('EMAIL_HOST_USER')

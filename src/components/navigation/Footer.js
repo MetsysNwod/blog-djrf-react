@@ -1,3 +1,8 @@
+import { NavLink, useNavigate } from "react-router-dom"
+import { useState } from "react";
+import axios from "axios"
+import { toast } from 'react-toastify'
+
 const navigation = {
   solutions: [
     { name: 'Marketing', href: '#' },
@@ -89,6 +94,49 @@ const navigation = {
 }
 
 function Footer() {
+
+  const navigate = useNavigate()
+
+  const [loading, setLoading] = useState(false)
+    const [formData, setFormData] = useState({
+      email: '',
+    });
+    const {
+      email } = formData;
+
+    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    const onSubmit = e => {
+      e.preventDefault();
+
+      const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+      }
+
+      const formData = new FormData()
+      formData.append('email', email)
+
+      const fetchData = async () => {
+        axios.post(`${process.env.REACT_APP_API_URL}/api/contacts/newsletter`, formData, config)
+        .then(res => {
+          toast.success('Gracias por suscribirte')
+          setTimeout(navigate('/newsletter'),1000)
+        })
+        .catch(err => {
+          
+          setLoading(false);
+          toast.error("Erroal enviar mensaje")
+        }) 
+      }
+
+      fetchData()
+      
+    }
+
+
+
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -103,9 +151,9 @@ function Footer() {
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <NavLink to={item.href} className="text-base text-gray-500 hover:text-gray-900">
                         {item.name}
-                      </a>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -115,9 +163,9 @@ function Footer() {
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <NavLink to={item.href} className="text-base text-gray-500 hover:text-gray-900">
                         {item.name}
-                      </a>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -129,9 +177,9 @@ function Footer() {
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <NavLink to={item.href} className="text-base text-gray-500 hover:text-gray-900">
                         {item.name}
-                      </a>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -141,9 +189,9 @@ function Footer() {
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <NavLink to={item.href} className="text-base text-gray-500 hover:text-gray-900">
                         {item.name}
-                      </a>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -157,14 +205,15 @@ function Footer() {
             <p className="mt-4 text-base text-gray-500">
               The latest news, articles, and resources, sent to your inbox weekly.
             </p>
-            <form className="mt-4 sm:flex sm:max-w-md">
+            <form onSubmit={e=>onSubmit(e)} className="mt-4 sm:flex sm:max-w-md">
               <label htmlFor="email-address" className="sr-only">
                 Email address
               </label>
               <input
                 type="email"
-                name="email-address"
-                id="email-address"
+                name="email"
+                value={email}
+                onChange={e=>onChange(e)}
                 autoComplete="email"
                 required
                 className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:placeholder-gray-400"
