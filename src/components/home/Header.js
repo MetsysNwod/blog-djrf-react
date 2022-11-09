@@ -110,7 +110,7 @@ function Header(){
                   <span className="sr-only">Watch our video to learn more</span>
                   <img
                     className="w-full"
-                    src="https://bafybeieeuqi5koa7vb3j2fu6q3axnriiekqsxj63nnkgdw66evxofgoc2q.ipfs.dweb.link/rocketrrobot.png"
+                    src="https://user-images.githubusercontent.com/96089651/193485293-8c218f12-c573-49ff-b652-6b0a0a7cc893.png"
                     alt=""
                   />
                   <span className="absolute inset-0 w-full h-full flex items-center justify-center" aria-hidden="true">
