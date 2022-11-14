@@ -9,7 +9,7 @@ urlpatterns = [
     path('api/blog/', include('apps.blog.urls')),
     path('api/category/', include('apps.category.urls')),
     path('api/contacts/', include('apps.contacts.urls')),
-    path('api/about/', include('apps.about.urls')),
+    
 ]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

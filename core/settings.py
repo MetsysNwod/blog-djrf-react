@@ -51,7 +51,7 @@ PROJECT_APPS = [
     'apps.blog',
     'apps.category',
     'apps.contacts',
-    'apps.about'
+    
 ]
 
 THIRD_PARTY_APPS = [
