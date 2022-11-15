@@ -15,15 +15,15 @@ function BlogCategories({ get_categories, categories }) {
             <div className="py-16 sm:py-24 xl:max-w-7xl xl:mx-auto xl:px-8">
                 <div className="px-4 sm:px-6 sm:flex sm:items-center sm:justify-between lg:px-8 xl:px-0">
                     <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">Vew Categories</h2>
-                    {/* <Link to="#" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+                    <Link to="/blog/categories" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
                         Browse all categories<span aria-hidden="true"> &rarr;</span>
-                    </Link> */}
+                    </Link>
                 </div>
 
-                <div className="mt-4 flow-root">
+                <div className="mt-4 flow-root overflow-hidden hover:overflow-auto  ">
                     <div className="-my-2">
                         <div className="box-content py-2 relative h-80 overflow-x-auto xl:overflow-visible">
-                            <div className="absolute min-w-screen-xl px-4 flex space-x-8 sm:px-6 lg:px-8 xl:relative xl:px-0 xl:space-x-0 xl:grid xl:grid-cols-5 xl:gap-x-8">
+                            <div className="absolute min-w-screen-xl px-4 flex space-x-8 sm:px-6 lg:px-8 xl:relative xl:px-0 xl:space-x-0 xl:grid xl:grid-cols-5 xl:gap-8">
 
                                 {
                                     categories ?
@@ -51,7 +51,7 @@ function BlogCategories({ get_categories, categories }) {
                 </div>
 
                 <div className="mt-6 px-4 sm:hidden">
-                    <Link to="#" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+                    <Link to="/blog/categories" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
                         Browse all categories<span aria-hidden="true"> &rarr;</span>
                     </Link>
                 </div>
