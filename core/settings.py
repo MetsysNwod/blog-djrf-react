@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 import environ
+import djongo
 
 env = environ.Env()
 environ.Env.read_env()
@@ -17,15 +18,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-SITE_NAME = 'HoldHodl'
+SITE_NAME = 'avcent'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 if not DEBUG:
     ALLOWED_HOSTS = [
-        "holdhodl.com",
-        ".holdhodl.com",
-        "www.holdhodl.com"
+        "avcent.site",
+        ".avcent.site",
+        "www.avcent.site"
     ]
 else:
     ALLOWED_HOSTS = [
@@ -106,6 +107,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+if not DEBUG:
+    MONGO_USER=env('MONGO_USER')
+    MONGO_PASSWORD=env('MONGO_PASSWORD')
+    MONGO_CLUSTER=env('MONGO_CLUSTER')
+
+# Database Debug
 
 DATABASES = {
     'default': {
@@ -113,6 +120,20 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Database Production
+
+""" DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'your-db-name',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+                'host': f'mongodb+srv://{MONGO_USER}:{MONGO_PASSWORD}@{MONGO_CLUSTER}?retryWrites=true&w=majority'
+        }  
+    }
+} """
+
 
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
@@ -128,15 +149,12 @@ CSRF_TRUSTED_ORIGINS = [
 
 if not DEBUG:
     CORS_ORIGIN_WHITELIST = [
-        'https://holdhodl.com',
-        'https://admin.holdhodl.com',
-        'https://blog.holdhodl.com',
+        'https://avcent.site',
+        
     ]
 
     CSRF_TRUSTED_ORIGINS = [
-        'https://holdhodl.com',
-        'https://admin.holdhodl.com',
-        'https://blog.holdhodl.com',
+        'https://avcent.site',
     ]
 
 PASSWORD_HASHERS = [
@@ -217,16 +235,16 @@ EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 ACTIVE_CAMPAIGN_URL=os.environ.get('ACTIVE_CAMPAIGN_URL')
 ACTIVE_CAMPAIGN_KEY=os.environ.get('ACTIVE_CAMPAIGN_KEY')
 
-if not DEBUG:
+""" if not DEBUG:
     DEFAULT_FROM_EMAIL="HoldHodl <mail@holdhodl.network>"
     EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST = env('EMAIL_HOST')
     EMAIL_HOST_USER = env('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
     EMAIL_PORT = env('EMAIL_PORT')
-    EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+    EMAIL_USE_TLS = env('EMAIL_USE_TLS') """
 
-    
+if not DEBUG:
     # django-ckeditor will not work with S3 through django-storages without this line in settings.py
     AWS_QUERYSTRING_AUTH = False
 
