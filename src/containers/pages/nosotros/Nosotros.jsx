@@ -21,16 +21,16 @@ const tabs = [
                         imageSrc: 'https://bafybeidozsktzxp6jnzwgs5fg6b5yvx7spszpzuyvu4ixb7lvau7yg4rdq.ipfs.dweb.link/django-logo-png-transparent.png',
                     },
                     /* {
-                        name:  'React',
-                        imageSrc: 'https://bafybeibsmc2uj65wwifcy6utxn64uohu7jt6sk5wqg7d5zemsl6gvk4264.ipfs.dweb.link/react-logo.png',
+                        name:  '',
+                        imageSrc: '',
                     }, */
                     {
                         name: 'MySQL',
                         imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSpxjh_Dki1zijNvqD-cnWimiF1V5tLgTGxQ&usqp=CAU',
                     },
                     /*   {
-                          name:  'Render.com',
-                          imageSrc: 'https://bafybeibsmc2uj65wwifcy6utxn64uohu7jt6sk5wqg7d5zemsl6gvk4264.ipfs.dweb.link/react-logo.png',
+                          name:  '',
+                          imageSrc: '',
                       }, */
                 ]
             },
@@ -53,55 +53,55 @@ const tabs = [
                         imageSrc: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.3LEtakq19bdpYU_cVMLx_wHaCZ%26pid%3DApi&f=1&ipt=ac761b000d408cad3bd21728f48fab9b294028577a0eae06f25be37c8b9062de&ipo=images',
                     },
                     /*  {
-                         name:  'React',
-                         imageSrc: 'https://bafybeibsmc2uj65wwifcy6utxn64uohu7jt6sk5wqg7d5zemsl6gvk4264.ipfs.dweb.link/react-logo.png',
+                         name:  '',
+                         imageSrc: '',
                      },
                      {
-                         name:  'Ethereum',
-                         imageSrc: 'https://bafybeibsmc2uj65wwifcy6utxn64uohu7jt6sk5wqg7d5zemsl6gvk4264.ipfs.dweb.link/react-logo.png',
+                         name:  '',
+                         imageSrc: '',
                      },
                      {
-                         name:  'PostgreSQL',
-                         imageSrc: 'https://bafybeibsmc2uj65wwifcy6utxn64uohu7jt6sk5wqg7d5zemsl6gvk4264.ipfs.dweb.link/react-logo.png',
+                         name:  '',
+                         imageSrc: '',
                      },
                      {
-                         name:  'Render.com',
-                         imageSrc: 'https://bafybeibsmc2uj65wwifcy6utxn64uohu7jt6sk5wqg7d5zemsl6gvk4264.ipfs.dweb.link/react-logo.png',
+                         name:  '',
+                         imageSrc: '',
                      }, */
                 ]
             },
         ],
     },
     /*   {
-        name: 'Uridium Marketplace',
+        name: '',
         features: [
           {
-            name: 'Mercado de Productos y Cursos en Linea',
+            name: '',
             description:
-              "Thanks to decentralized finance, it's possible to launch a business with a product and start making money the first day. This is not without its problems, however, we believe that this are easily dismissed when the bigger picture helps the majority of users.",
-            imageSrc: 'https://bafybeif3lqxefojyq2quzu6t4d7bix2klzez753d56nphjr36vyacmivcm.ipfs.dweb.link/uriidiumMarketplace.PNG',
+              "",
+            imageSrc: '',
             imageAlt: '',
-            url: 'https://uridium.io',
+            url: '',
             tech_stack: [
                 {
-                    name:  'Django Rest Framework',
-                    imageSrc: 'https://bafybeidozsktzxp6jnzwgs5fg6b5yvx7spszpzuyvu4ixb7lvau7yg4rdq.ipfs.dweb.link/django-logo-png-transparent.png',
+                    name:  '',
+                    imageSrc: '',
                 },
                 {
-                    name:  'React',
-                    imageSrc: 'https://bafybeibsmc2uj65wwifcy6utxn64uohu7jt6sk5wqg7d5zemsl6gvk4264.ipfs.dweb.link/react-logo.png',
+                    name:  '',
+                    imageSrc: '',
                 },
                 {
-                    name:  'Ethereum',
-                    imageSrc: 'https://bafybeibsmc2uj65wwifcy6utxn64uohu7jt6sk5wqg7d5zemsl6gvk4264.ipfs.dweb.link/react-logo.png',
+                    name:  '',
+                    imageSrc: '',
                 },
                 {
-                    name:  'PostgreSQL',
-                    imageSrc: 'https://bafybeibsmc2uj65wwifcy6utxn64uohu7jt6sk5wqg7d5zemsl6gvk4264.ipfs.dweb.link/react-logo.png',
+                    name:  '',
+                    imageSrc: '',
                 },
                 {
-                    name:  'Render.com',
-                    imageSrc: 'https://bafybeibsmc2uj65wwifcy6utxn64uohu7jt6sk5wqg7d5zemsl6gvk4264.ipfs.dweb.link/react-logo.png',
+                    name:  '',
+                    imageSrc: '',
                 },
             ]
           },
